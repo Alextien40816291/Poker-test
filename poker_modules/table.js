@@ -217,7 +217,7 @@ Table.prototype.initializeRound = function( changeDealer ) {
 			// If a player is sitting on the current seat
 			if( this.seats[i] !== null && this.seats[i].public.sittingIn ) {
 				if( !this.seats[i].public.chipsInPlay ) {
-					this.seats[seat].sitOut();
+					this.seats[i].sitOut();
 					this.playersSittingInCount--;
 				} else {
 					this.playersInHandCount++;
