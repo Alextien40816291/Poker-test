@@ -503,7 +503,6 @@ describe('initializeRound test', () => {
         table.public.dealerSeat = 1; // set the dealer seat
         table.public.seatsCount = 3; // set the seats count
         table.playersSittingInCount = 2; // set the players sitting in count
-        console.log('test');
         table.seats = [
             { 
                 public: { sittingIn: true },
