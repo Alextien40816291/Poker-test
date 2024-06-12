@@ -316,7 +316,7 @@ Player.prototype.evaluateHand = function( board ) {
                     }
                 }
                 else {
-                    throw new Error("Five same card should never happened!");
+                    throw new Error("Five same value card should never happened!");
                 }
             }
             // If there are two pairs

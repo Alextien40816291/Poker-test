@@ -332,7 +332,7 @@ describe('evaluateHand', () => {
         const testFunction = () => {
             player.evaluateHand(['9h', '9s', '9c', '9d', '9h']);
         };
-        expect(testFunction).toThrow("Five same card should never happened!");
+        expect(testFunction).toThrow("Five same value card should never happened!");
     });
 
     it('4 / 3 => four of the kind', () => {
