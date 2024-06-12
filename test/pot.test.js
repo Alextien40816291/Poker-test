@@ -86,12 +86,18 @@ describe('Pot test', () => {
         expect(players[2].public.bet).toEqual(0);
     });
 
-    it('addPlayersBets', () => {
+    it('check addPlayersBets', () => {
         pot.reset();
-        const player = { public: { bet: 30 }, seat: 2 };
-        pot.addPlayersBets(player);
+        const players = [
+            {  seat: 0, public: { chipsInPlay: 20, name: 'Player1', inHand: true, bet: 10 }, evaluatedHand: { rating: 2300486, name: 'two pair, jacks and fives', cards: ['5s', 'Js'] }},
+            { seat: 1, public: { chipsInPlay: 30, name: 'Player2', inHand: true, bet: 10 }, evaluatedHand: { rating: 1068376, name: 'a pair of fours', cards: ['4c', '3s'] }},
+            { seat: 2, public: { chipsInPlay: 40, name: 'Player3', inHand: true, bet: 10 }, evaluatedHand: { rating: 3100676, name: 'three of a kind, fives', cards: ['5c', '5h'] }},
+        ];
+        players.forEach(player => {
+            pot.addPlayersBets(player);
+        });
         expect(pot.pots[0].amount).toEqual(30);
-        // expect(pot.pots[0].contributors).toEqual([2]);
+        expect(pot.pots[0].contributors).toEqual([0,1,2]);
     });
 
     it('addPlayersBets with player already in contributors', () => {
